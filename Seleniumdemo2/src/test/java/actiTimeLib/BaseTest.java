@@ -10,14 +10,14 @@ import org.testng.annotations.BeforeMethod;
 public class BaseTest implements Constants {
 	public WebDriver driver;
 	
-	@BeforeMethod(alwaysRun=true)
+	@BeforeMethod
 	public void launch() {
 		System.setProperty(CHROME_KEY, CHROME_PATH);
 		driver = new ChromeDriver();
 		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 		driver.manage().window().maximize();
 		}
-	@AfterMethod(alwaysRun=true)
+	@AfterMethod
 	public void closeBrowser() {
 		driver.quit();
 	}
